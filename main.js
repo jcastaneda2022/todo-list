@@ -46,6 +46,24 @@ window.addEventListener('load', () => {
         tasksContainer.appendChild(newTaskContainer);
 
         // Javascript Setup
+        input.value = '';
+
+        editButton.addEventListener('click', (e) => {
+            console.log('EDIT');
+
+            if (editButton.innerHTML.toLowerCase() == 'edit') {
+                editButton.innerText = 'Save';
+                newInput.removeAttribute('readonly');
+                newInput.focus();
+            } else {
+                editButton.innerText = 'Edit';
+                newInput.setAttribute('readonly', 'readonly');
+            }
+        })
+
+        deleteButton.addEventListener('click', (e) => {
+            tasksContainer.removeChild(newTaskContainer)
+        })
     })
 
 });
