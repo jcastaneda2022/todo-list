@@ -25,9 +25,27 @@ window.addEventListener('load', () => {
 
         newTaskContent.appendChild(newInput);
 
+        const taskActions = document.createElement('div');
+        taskActions.classList.add('actions');
+
+        const editButton = document.createElement('button');
+        editButton.classList.add('edit');
+        editButton.innerText = 'Edit';
+
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete');
+        deleteButton.innerText = 'Delete';
+
+        taskActions.appendChild(editButton);
+        taskActions.appendChild(deleteButton);
+
+        newTaskContainer.appendChild(taskActions);
+
 
         // Final
         tasksContainer.appendChild(newTaskContainer);
+
+        // Javascript Setup
     })
 
 });
